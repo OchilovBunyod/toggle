@@ -1,0 +1,60 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background-color: rgb(228, 221, 221);
+}
+
+.from-group {
+  width: 150px;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+label {
+  margin-bottom: 20px;
+}
+
+input {
+  display: none;
+}
+
+label::before {
+  width: 40px;
+  height: 20px;
+  content: "";
+  background-color: rgb(228, 221, 221);
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  border-radius: 50px;
+  border: 2px solid #ccc;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.014);
+}
+
+label::after {
+  width: 16px;
+  height: 16px;
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  right: 22px;
+  top: 2px;
+  border-radius: 50px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.014);
+}
+
+input:checked + label::after {
+  right: 2px;
+}
+
+input:checked + label::before {
+  background-color: rgb(100, 209, 100);
+}
